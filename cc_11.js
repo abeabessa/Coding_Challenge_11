@@ -17,3 +17,14 @@ function updateTotalPrice() {
 // Event listeners for product and quantity changes
 productSelector.addEventListener('change', updateTotalPrice);
 quantityInput.addEventListener('input', updateTotalPrice);
+
+// Function to calculate and update the total price
+function updateTotalPrice() {
+    const productPrice = parseFloat(productSelector.value);
+    const quantity = parseInt(quantityInput.value);
+    const totalPrice = productPrice * quantity;
+    
+    // Update the total price display
+    totalPriceElement.textContent = totalPrice.toFixed(2);
+}
+
